@@ -7,3 +7,16 @@ var countBy = function(limit, counter) {
 
   return results;
 };
+
+$(document).ready(function() {
+  $("form").submit(function(event) {
+    var limit = parseInt($("#limit").val());
+    var counter = parseInt($("#counter").val());
+    var results = countBy(limit, counter).join(', ');
+
+    $("#results").text(results);
+    $("#results").show();
+
+    event.preventDefault();
+  })
+})
